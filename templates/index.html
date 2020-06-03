@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body style="background: white;">
+ <div class="login">
+
+	<h1>House Price prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="rate" placeholder="rate" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Prices of House on basis of square_feet</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+     <br>
+
+ </div>
+</body>
+</html>
